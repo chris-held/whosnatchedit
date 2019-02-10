@@ -5,7 +5,7 @@ class Header extends PureComponent {
     return (
       <div>
         <h1>Who Snatched it?</h1>
-        <p class="lead">The holistic guide to who was your stuff.</p>
+        <p className="lead">The holistic guide to who was your stuff.</p>
       </div>
     );
   }
