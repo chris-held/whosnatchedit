@@ -35,16 +35,21 @@ class List extends Component {
     return (
       <React.Fragment>
         <div className="row">
-          <button onClick={this.addItem} className="btn btn-primary btn-large">
+          <button
+            onClick={this.addItem}
+            data-testid="List.Add"
+            className="btn btn-primary btn-large"
+          >
             Add
           </button>
         </div>
         <React.Fragment>
           {items.map((item, index) => (
-            <div className="row" key={item.id}>
+            <div className="row" key={item.id} data-testid="ListItem">
               <form className="form-inline">
                 <input
                   type="text"
+                  data-testid="ListItem.WhoInput"
                   className="input-small"
                   onChange={e => {
                     this.handleChange(index, "who", e.target.value);
@@ -62,6 +67,8 @@ class List extends Component {
                   placeholder="What"
                 />
                 <button
+                  type="button"
+                  data-testid="ListItem.Remove"
                   onClick={() => {
                     this.removeItem(item.id);
                   }}
