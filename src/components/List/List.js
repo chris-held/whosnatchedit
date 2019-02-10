@@ -5,9 +5,16 @@ class List extends Component {
     items: []
   };
 
+  interval;
+
   componentDidMount = () => {
     const { items } = this.props;
     this.setState({ items });
+    this.interval = setInterval(() => {
+      const { items } = this.state;
+      console.log("items", items);
+      window.localStorage.setItem("items", JSON.stringify(items));
+    }, 3000);
   };
 
   addItem = () => {
@@ -28,6 +35,10 @@ class List extends Component {
     const items = Array.from(this.state.items);
     items[index][prop] = value;
     this.setState({ items });
+  };
+
+  componentWillUnmount = () => {
+    clearInterval(this.interval);
   };
 
   render() {
