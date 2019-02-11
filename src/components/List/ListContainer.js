@@ -3,23 +3,8 @@ import List from "./List";
 
 class ListContainer extends Component {
   render() {
-    const items = [
-      {
-        who: "Irene",
-        what: "Car Seat",
-        id: 1
-      },
-      {
-        who: "Katie",
-        what: "Giraffe Costume",
-        id: 2
-      },
-      {
-        who: "Brian",
-        what: "Sawzal",
-        id: 3
-      }
-    ];
+    const raw = window.localStorage.getItem("items");
+    const items = raw && raw.length ? JSON.parse(raw) : [];
     return <List items={items} />;
   }
 }
