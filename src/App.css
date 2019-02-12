@@ -1,5 +1,21 @@
 .main {
   padding-top: 3em;
   width: 500px;
-  margin: auto;
+  margin: 0 auto;
+}
+
+.btn-lg {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+input {
+  padding: 8px;
+  margin: 2px;
+}
+
+.btn-outline-danger {
+  padding: 10px 16px;
+  position: relative;
+  bottom: 2px;
 }

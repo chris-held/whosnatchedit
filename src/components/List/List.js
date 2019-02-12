@@ -49,7 +49,7 @@ class List extends Component {
           <button
             onClick={this.addItem}
             data-testid="List.Add"
-            className="btn btn-primary btn-large"
+            className="btn btn-primary btn-lg"
           >
             Add
           </button>
@@ -57,7 +57,7 @@ class List extends Component {
         <React.Fragment>
           {items.map((item, index) => (
             <div className="row" key={item.id} data-testid="ListItem">
-              <form className="form-inline">
+              <form>
                 <input
                   type="text"
                   data-testid="ListItem.WhoInput"
@@ -83,7 +83,7 @@ class List extends Component {
                   onClick={() => {
                     this.removeItem(item.id);
                   }}
-                  className="btn btn-link"
+                  className="btn btn-outline-danger"
                 >
                   X
                 </button>
